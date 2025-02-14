@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Review Assistant</title>
+    <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-gray-50">
+    <div class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex items-center space-x-2">
+            <svg class="h-8 w-8 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m0 0l3-3m-3 3v4m0 0h-6"></path>
+            </svg>
+            <h1 class="text-2xl font-bold text-gray-900">AI Code Review Assistant</h1>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Code Input Section -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-semibold text-gray-900">Your Code</h2>
+                    <button id="analyze-btn"
+                        class="flex items-center space-x-2 px-4 py-2 rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <span>Analyze</span>
+                    </button>
+                </div>
+                <textarea id="code-input" placeholder="Paste your code here..."
+                    class="w-full h-[500px] p-4 font-mono text-sm border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+            </div>
+
+            <!-- Suggestions Section -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center space-x-2 mb-4">
+                    <svg class="h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 4l7 7-7 7M13 4l7 7-7 7"></path>
+                    </svg>
+                    <h2 class="text-lg font-semibold text-gray-900">AI Suggestions</h2>
+                </div>
+
+                <div id="analysis-result" class="hidden">
+                    <!-- Suggestions will go here -->
+                </div>
+
+                <div id="no-suggestions" class="flex flex-col items-center justify-center h-[500px] text-gray-500">
+                    <svg class="h-12 w-12 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 4l7 7-7 7M13 4l7 7-7 7"></path>
+                    </svg>
+                    <p>Paste your code and click Analyze to get suggestions</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
